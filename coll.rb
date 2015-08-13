@@ -1,14 +1,12 @@
 
 def collatz(input)
-    chain = []
-    chain << input
-    nd = next_digit(input)
+    nd = input
+    n = 1
     while nd != 1
-    chain << nd
-    nd = next_digit(nd)
-end
-    chain << nd
-    return chain.count
+        n = n + 1
+        nd = next_digit(nd)
+    end
+    return n
 end
 
 def next_digit(input)
@@ -25,30 +23,19 @@ def next_digit(input)
 end
 
 
-collatz = []
+number = 0
+max_length = 0
 1000.times do |n|
     n = n + 1
-    collatz << collatz(n)
+    this_length = collatz(n)
+    if this_length > max_length
+        max_length = this_length
+        number = n
+    end
 end
-max_collatz = collatz.max
-puts collatz.index(max_collatz) + 1
+
+puts max_length 
+puts number
 
 
-
-
-
-##collatz = []
-#1000.times do |n|
-#    n = n + 1
-#    collatz << collatz(n)
-#end
-#max = 0
-
-#if collatz(n) > max 
-
-
-#7.times do |n|
-#    n = n + 1
- #   puts collatz(n)
-#end
 
