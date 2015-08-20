@@ -1,4 +1,16 @@
 
+#make the hash before defining the collatz function, no other code will appear outside of collatz function
+#inside collatz , hash will be involved in the loop
+sequences = Hash.new 
+sequences = {collatz(input) => input}
+# I need to create a hash that will have "input" as the Key and the result of collatz(input) 
+# as the corresponding value.
+#Then, each time I go through the loop, I can store those keys and values into the hash.
+#I can also reference the hash when I go through the loop - basically asking "Is this value in the hash
+#alread}y?" If yes, take info from the hash to solve the problem.
+
+
+
 def collatz(input)
     nd = input
     n = 1
@@ -6,7 +18,7 @@ def collatz(input)
         n = n + 1
         nd = next_digit(nd)
     end
-    return n
+    puts collatz(input) => sequences
 end
 
 def next_digit(input)
@@ -36,6 +48,7 @@ end
 
 puts max_length 
 puts number
+
 
 
 
