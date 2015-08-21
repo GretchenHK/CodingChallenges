@@ -1,0 +1,23 @@
+
+def iterative_fib(n)
+    if n == 1
+        return 1
+    end
+    if n == 2
+        return 1
+    end
+    
+    prev = 1
+    last = 1
+    cur = 0
+    
+    (n-2).times do
+     cur = prev + last
+     last = prev
+     prev = cur
+     
+    end
+    return cur
+end
+
+puts iterative_fib(34)
