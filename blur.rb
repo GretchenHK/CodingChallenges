@@ -5,8 +5,11 @@ class Image
 	end
 
 	def output_image
-		@spots.each do |i|
-			puts i.join
+		@spots.each do |row|
+			row.each do |spot|
+				print spot
+			end
+			puts 
 		end
 	end
 end
@@ -20,4 +23,3 @@ image = Image.new([
 ])
 
 image.output_image
-	
